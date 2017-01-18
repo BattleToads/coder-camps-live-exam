@@ -39,7 +39,11 @@ var carapp;
                 this.$state = $state;
                 this.$stateParams = $stateParams;
                 if ($stateParams) {
-                    this.id = $stateParams['id'];
+                    var info = $stateParams['id'];
+                    var seperated = info.split(",");
+                    this.id = seperated[0];
+                    this.make = seperated[1];
+                    this.model = seperated[2];
                 }
             }
             EditCarController.prototype.editCar = function () {

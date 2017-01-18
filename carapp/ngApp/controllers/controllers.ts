@@ -45,6 +45,8 @@ namespace carapp.Controllers {
     export class EditCarController {
       public car;
       public id;
+      public make;
+      public model;
 
       public editCar() {
         this.car._id = this.id;
@@ -59,7 +61,11 @@ namespace carapp.Controllers {
       )
       {
         if($stateParams) {
-          this.id = $stateParams['id'];
+          let info = $stateParams['id'];
+          let seperated = info.split(",")
+          this.id = seperated[0];
+          this.make = seperated[1];
+          this.model = seperated[2];
         }
       }
 
