@@ -62,7 +62,7 @@ namespace carapp.Controllers {
       {
         if($stateParams) {
           let info = $stateParams['id'];
-          let seperated = info.split(",")
+          let seperated = info.split(",");
           this.id = seperated[0];
           this.make = seperated[1];
           this.model = seperated[2];
